@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trix Markdown</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>Trix Markdown</h1>
+    </header>
+
+    <div id="loading" class="message">
+      <p>Detecting Trix editors...</p>
+    </div>
+
+    <div id="no-editor" class="message" hidden>
+      <div class="icon">📝</div>
+      <p>No Trix editor found on this page.</p>
+      <p class="hint">Navigate to a page with a Trix editor to use this extension.</p>
+    </div>
+
+    <div id="editor-found" hidden>
+      <div id="editor-selector" class="form-group" hidden>
+        <label for="editor-select">Select editor:</label>
+        <select id="editor-select"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="markdown-input">Markdown content:</label>
+        <textarea
+          id="markdown-input"
+          placeholder="Paste your Markdown here...
+
+Example:
+# Heading
+**Bold text** and *italic text*
+
+- List item 1
+- List item 2
+
+[Link](https://example.com)"
+          rows="10"
+        ></textarea>
+      </div>
+
+      <div class="button-group">
+        <button id="insert-btn" class="primary-btn">Add to Trix Editor</button>
+      </div>
+
+      <p class="hint">Tip: The Markdown will be converted to HTML and inserted at the beginning of the editor.</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Trix Editor Markdown Button",
+  "version": "1.0.0",
+  "description": "Add Markdown support to Trix editors - paste Markdown and convert to HTML",
+  "permissions": ["activeTab", "<all_urls>"],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content-bundle.js"],
+      "css": ["styles/modal.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    "content/page-context.js"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "trix-markdown@example.com"
+    }
+  }
+}

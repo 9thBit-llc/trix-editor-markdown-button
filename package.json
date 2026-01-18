@@ -1,0 +1,36 @@
+{
+  "name": "trix-editor-markdown-button",
+  "version": "1.0.0",
+  "license": "Big Time License",
+  "description": "A cross-browser extension that adds partial Markdown support to Trix editors",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:chrome && npm run build:firefox",
+    "build:chrome": "webpack --env browser=chrome --env production",
+    "build:firefox": "webpack --env browser=firefox --env production",
+    "build:firefox-v3": "webpack --env browser=firefox-v3 --env production",
+    "dev:chrome": "webpack --env browser=chrome --watch",
+    "dev:firefox": "webpack --env browser=firefox --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:integration": "jest --config jest.integration.config.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
+    "@testing-library/dom": "^9.3.4",
+    "babel-jest": "^30.2.0",
+    "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "puppeteer": "^24.35.0",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "marked": "^11.2.0"
+  }
+}
